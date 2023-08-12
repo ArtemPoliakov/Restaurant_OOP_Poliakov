@@ -6,6 +6,11 @@ public class Table {
     private Customer customer;
     private Integer tableNumber;
 
+    public Table(Customer customer, Integer tableNumber){
+        this.customer = customer;
+        this.tableNumber = tableNumber;
+    }
+
     public Integer getTableNumber() {
         return tableNumber;
     }

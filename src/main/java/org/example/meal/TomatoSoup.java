@@ -5,4 +5,8 @@ public class TomatoSoup extends Soup {
     protected void addCustomIngredient() {
         System.out.println("Add tomato");
     }
+    @Override
+    public String toString(){
+        return "TomatoSoup";
+    }
 }

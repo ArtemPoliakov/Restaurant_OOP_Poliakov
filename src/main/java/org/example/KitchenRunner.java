@@ -1,21 +1,21 @@
 package org.example;
 
 import org.example.meal.TomatoSoup;
+import org.example.people.Cook;
 import org.example.people.Customer;
+import org.example.people.Waiter;
 import org.example.places.Table;
 
 public class KitchenRunner {
-    Application application = new Application();
+    Cook cook = new Cook();
+    Waiter waiter = new Waiter();
+    Application application = new Application(cook,"Oleg",waiter,"Oksana");
 
-    public void run() {
-        Customer customer = new Customer();
+    public void run(Table table) {
+        Customer customer = table.getCustomer();
 
-        Table table = new Table();
-        table.setCustomer(customer);
-        table.setTableNumber(1);
+        application.makeOrder(table, customer.getSoupType());
 
-        application.makeOrder(table, TomatoSoup.class);
-
-        System.out.println("customer.getSoup() = " + customer.getSoup());
+        System.out.println("customer.getSoup() = " + customer.getSoup() + "\n\n\n");
     }
 }
